@@ -13,13 +13,13 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#prototype" aria-label="Kochi Metro concept home">
+    <a class="brand" href="index.html" aria-label="Kochi Metro concept home">
       <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
       <span><strong>Kochi Metro</strong><small>Journey planner concept</small></span>
     </a>
     <nav aria-label="Page sections">
-      <a class="active" href="#prototype">Prototype</a>
-      <a href="#case-study">Case study</a>
+      <a class="active" href="index.html">Prototype</a>
+      <a href="case-study.html">Case study</a>
     </nav>
     <span class="concept-badge">Portfolio concept</span>
   </header>
@@ -103,26 +103,17 @@
       </div>
     </section>
 
-    <section class="case-study" id="case-study">
-      <div class="section-heading"><span class="eyebrow">UX rationale</span><h2>Familiar enough to trust.<br>Clear enough to use.</h2></div>
-      <div class="insight-grid">
-        <article><span class="article-number">01</span><h3>Make the route visible</h3><p>A single vertical path shows entry, stops, and exit as one mental model. Users see where a new stop belongs before they commit.</p><div class="mini-visual route-mini"><i></i><i></i><i></i><i></i></div></article>
-        <article><span class="article-number">02</span><h3>Progressive disclosure</h3><p>The original two-station flow stays simple. Waypoint controls appear only after “Add a stop,” keeping the default task lightweight.</p><div class="mini-visual disclosure-mini"><span>+</span><b>Add a stop</b><small>Optional</small></div></article>
-        <article><span class="article-number">03</span><h3>Prevent route errors</h3><p>Duplicate stations are flagged before fare review. Reorder and remove controls sit beside each stop, where their effect is obvious.</p><div class="mini-visual error-mini"><span>!</span><div><b>Station already selected</b><small>Choose another stop</small></div></div></article>
+    <section class="study-bridge" aria-labelledby="studyBridgeTitle">
+      <div>
+        <span class="eyebrow">Behind the interaction</span>
+        <h2 id="studyBridgeTitle">See how the route became the interface.</h2>
+        <p>Explore the problem framing, journey model, interaction decisions, and visual-system extension behind this prototype.</p>
       </div>
-      <div class="design-system">
-        <div><span class="eyebrow">System extension</span><h3>Built from the product’s existing language</h3><p>The concept preserves KMRL’s teal, airy white surfaces, soft elevation, icon-led labels, and generous rounded geometry—then improves hierarchy, feedback, and responsive behavior.</p></div>
-        <div class="tokens" aria-label="Visual design tokens">
-          <div><span class="swatch teal"></span><small>Metro teal</small><b>#4CAAAB</b></div>
-          <div><span class="swatch ink"></span><small>Deep ink</small><b>#153B3E</b></div>
-          <div><span class="radius-demo"></span><small>Card radius</small><b>24 px</b></div>
-          <div><span class="shadow-demo"></span><small>Soft elevation</small><b>Layer 02</b></div>
-        </div>
-      </div>
+      <a class="study-link" href="case-study.html"><span>Read the full case study</span><b aria-hidden="true">↗</b></a>
     </section>
   </main>
 
-  <footer><span>Independent UX concept · Not affiliated with Kochi Metro Rail Ltd.</span><a href="#prototype">Back to prototype ↑</a></footer>
+  <footer><span>Independent UX concept · Not affiliated with Kochi Metro Rail Ltd.</span><a href="case-study.html">View case study →</a></footer>
   <script src="app.js"></script>
 </body>
 </html>

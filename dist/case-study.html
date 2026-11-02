@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153b3e">
+  <meta name="description" content="Case study for an Uber-like multi-stop journey planner concept for Kochi Metro.">
+  <title>Case study · Kochi Metro multi-stop journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="case-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Kochi Metro concept home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>Kochi Metro</strong><small>Journey planner concept</small></span>
+    </a>
+    <nav aria-label="Page sections">
+      <a href="index.html">Prototype</a>
+      <a class="active" href="case-study.html">Case study</a>
+    </nav>
+    <span class="concept-badge">Portfolio concept</span>
+  </header>
+
+  <main>
+    <section class="cs-hero">
+      <div class="cs-hero-copy">
+        <span class="eyebrow">Product design case study</span>
+        <h1>Making room for stops—<em>without slowing down the journey.</em></h1>
+        <p>A high-fidelity concept that extends Kochi Metro’s direct ticket flow into a flexible multi-stop planner while keeping the familiar experience intact.</p>
+        <a class="cs-inline-link" href="index.html">Open interactive prototype <span>↗</span></a>
+      </div>
+      <aside class="cs-meta" aria-label="Project details">
+        <div><small>Project</small><strong>Independent concept</strong></div>
+        <div><small>Focus</small><strong>Journey planning UX</strong></div>
+        <div><small>Output</small><strong>Responsive prototype</strong></div>
+        <div><small>Year</small><strong>2026</strong></div>
+      </aside>
+    </section>
+
+    <section class="cs-intro cs-section">
+      <div class="cs-index">01 / Context</div>
+      <div class="cs-intro-copy">
+        <span class="eyebrow">The design challenge</span>
+        <h2>The existing flow is excellent at one thing: getting from A to B.</h2>
+        <p>Its two-station structure is direct and easy to scan. The challenge was to support intermediate stops without turning every simple booking into a complex route-building task.</p>
+      </div>
+      <div class="before-card" aria-label="Simplified representation of the original direct journey form">
+        <div class="before-head"><span>Current mental model</span><b>A → B</b></div>
+        <div class="before-fields"><div><small>Entry station</small><span>Aluva</span></div><i>⇄</i><div><small>Exit station</small><span>M.G. Road</span></div></div>
+        <div class="before-note"><b>Opportunity</b><span>Where should an optional stop live without competing with the primary task?</span></div>
+      </div>
+    </section>
+
+    <section class="cs-principle">
+      <span class="eyebrow">Design principle</span>
+      <blockquote>Keep the direct trip as the default. Reveal complexity only when the traveller asks for it.</blockquote>
+    </section>
+
+    <section class="cs-section cs-process">
+      <div class="cs-index">02 / Interaction model</div>
+      <div class="section-heading"><span class="eyebrow">The route is the interface</span><h2>One visible sequence, from entry to exit.</h2><p>Instead of treating each station as an isolated field, the concept turns the form into a route. Every added stop enters the same visual sequence and inherits controls that match its role.</p></div>
+      <div class="flow-diagram" aria-label="Journey planning flow">
+        <article><span>1</span><small>Start</small><strong>Choose entry</strong></article>
+        <i aria-hidden="true"></i>
+        <article class="flow-accent"><span>+</span><small>Optional</small><strong>Add stops</strong></article>
+        <i aria-hidden="true"></i>
+        <article><span>2</span><small>Finish</small><strong>Choose exit</strong></article>
+        <i aria-hidden="true"></i>
+        <article><span>✓</span><small>Review</small><strong>See route & fare</strong></article>
+      </div>
+    </section>
+
+    <section class="case-study cs-decisions">
+      <div class="cs-index">03 / Key decisions</div>
+      <div class="section-heading"><span class="eyebrow">Interaction decisions</span><h2>Familiar enough to trust.<br>Clear enough to use.</h2></div>
+      <div class="insight-grid">
+        <article><span class="article-number">01</span><h3>Make the route visible</h3><p>A single vertical path connects entry, stops, and exit. Travellers can understand where a new stop belongs before choosing it.</p><div class="mini-visual route-mini"><i></i><i></i><i></i><i></i></div></article>
+        <article><span class="article-number">02</span><h3>Reveal controls progressively</h3><p>The original two-station flow remains the default. Waypoint controls appear only after “Add a stop,” keeping routine bookings lightweight.</p><div class="mini-visual disclosure-mini"><span>+</span><b>Add a stop</b><small>Optional</small></div></article>
+        <article><span class="article-number">03</span><h3>Prevent route errors early</h3><p>Duplicate stations are flagged before fare review. Reorder and remove actions sit beside the stop they affect.</p><div class="mini-visual error-mini"><span>!</span><div><b>Station already selected</b><small>Choose another stop</small></div></div></article>
+      </div>
+    </section>
+
+    <section class="cs-section cs-anatomy">
+      <div class="cs-index">04 / Interface anatomy</div>
+      <div class="anatomy-grid">
+        <div class="anatomy-copy">
+          <span class="eyebrow">Designed for orientation</span>
+          <h2>Each control answers one question.</h2>
+          <ol>
+            <li><b>Where am I starting?</b><span>A fixed origin anchors the route.</span></li>
+            <li><b>What happens on the way?</b><span>Optional stops can be added, reordered, or removed.</span></li>
+            <li><b>Where am I ending?</b><span>A distinct square marker closes the sequence.</span></li>
+            <li><b>What will this journey cost?</b><span>Route, duration, stops, and illustrative fare appear together.</span></li>
+          </ol>
+        </div>
+        <div class="anatomy-ui" aria-label="Annotated journey editor concept">
+          <span class="anatomy-line"></span>
+          <div><i>1</i><small>Entry station</small><strong>Aluva</strong></div>
+          <div class="anatomy-stop"><i>2</i><small>Stop 1</small><strong>Edapally</strong><b>↑ ↓ ×</b></div>
+          <button type="button" tabindex="-1">+ Add a stop</button>
+          <div><i>3</i><small>Exit station</small><strong>M.G. Road</strong></div>
+          <span class="anatomy-cta">Review journey & fare →</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-system">
+      <div class="design-system">
+        <div><span class="eyebrow">Visual system extension</span><h3>Built from the product’s existing language</h3><p>The concept preserves metro teal, airy white surfaces, soft elevation, icon-led labels, and rounded geometry—then strengthens hierarchy, feedback, and responsive behavior.</p></div>
+        <div class="tokens" aria-label="Visual design tokens">
+          <div><span class="swatch teal"></span><small>Metro teal</small><b>#4CAAAB</b></div>
+          <div><span class="swatch ink"></span><small>Deep ink</small><b>#153B3E</b></div>
+          <div><span class="radius-demo"></span><small>Card radius</small><b>24 px</b></div>
+          <div><span class="shadow-demo"></span><small>Soft elevation</small><b>Layer 02</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cs-final">
+      <span class="eyebrow">Try the outcome</span>
+      <h2>Plan a route.<br>Add a stop. Break it.</h2>
+      <p>The prototype includes stop limits, duplicate validation, reordering, passenger controls, and a responsive journey summary.</p>
+      <a href="index.html">Launch interactive prototype <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer><span>Independent UX concept · Not affiliated with Kochi Metro Rail Ltd.</span><a href="index.html">Open prototype →</a></footer>
+</body>
+</html>
