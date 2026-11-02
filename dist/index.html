@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4caaab">
+  <meta name="description" content="A portfolio UX concept for adding multiple stops to Kochi Metro journey planning.">
+  <title>Kochi Metro · Multi-stop journey concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#prototype" aria-label="Kochi Metro concept home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>Kochi Metro</strong><small>Journey planner concept</small></span>
+    </a>
+    <nav aria-label="Page sections">
+      <a class="active" href="#prototype">Prototype</a>
+      <a href="#case-study">Case study</a>
+    </nav>
+    <span class="concept-badge">Portfolio concept</span>
+  </header>
+
+  <main>
+    <section class="hero" id="prototype">
+      <div class="hero-copy">
+        <span class="eyebrow">A faster way to plan connected trips</span>
+        <h1>One journey.<br><em>More possibilities.</em></h1>
+        <p>Add up to three stops between your entry and exit stations—without starting over or buying separate tickets.</p>
+        <div class="hero-points" aria-label="Feature highlights">
+          <span><b>01</b> Add stops</span>
+          <span><b>02</b> Reorder route</span>
+          <span><b>03</b> Review fare</span>
+        </div>
+      </div>
+
+      <div class="planner-shell">
+        <div class="planner-topline">
+          <div>
+            <span class="status-dot"></span>
+            <span>Service operating normally</span>
+          </div>
+          <button class="icon-button" id="resetRoute" type="button" aria-label="Reset journey" title="Reset journey">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+          </button>
+        </div>
+
+        <div class="booking-card">
+          <div class="card-heading">
+            <div><span class="step-kicker">Plan your journey</span><h2>Where are you going?</h2></div>
+            <span class="timer" title="Illustrative session timer"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 04:32</span>
+          </div>
+
+          <div class="route-editor" id="routeEditor">
+            <div class="route-line" aria-hidden="true"><span></span></div>
+            <div class="station-row endpoint">
+              <span class="route-node origin-node" aria-hidden="true"></span>
+              <label for="origin">Entry station</label>
+              <div class="select-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.2 6-12a6 6 0 1 0-12 0c0 6.8 6 12 6 12Z"/><circle cx="12" cy="9" r="2"/></svg>
+                <select id="origin" aria-describedby="routeHelp"></select>
+              </div>
+            </div>
+
+            <div id="stopsContainer" class="stops-container" aria-live="polite"></div>
+
+            <button class="add-stop" id="addStop" type="button">
+              <span aria-hidden="true">+</span> Add a stop <small>Up to 3</small>
+            </button>
+
+            <div class="station-row endpoint">
+              <span class="route-node destination-node" aria-hidden="true"></span>
+              <label for="destination">Exit station</label>
+              <div class="select-wrap">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.2 6-12a6 6 0 1 0-12 0c0 6.8 6 12 6 12Z"/><circle cx="12" cy="9" r="2"/></svg>
+                <select id="destination"></select>
+              </div>
+            </div>
+          </div>
+          <p id="routeHelp" class="sr-only">Select an entry and exit station, then optionally add and reorder up to three intermediate stops.</p>
+
+          <div class="trip-options">
+            <label><span>Travel type</span><select id="travelType"><option value="one">One Way</option><option value="round">Round Trip</option></select></label>
+            <label><span>Passengers</span><select id="passengers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+          </div>
+
+          <div class="validation" id="validation" role="alert"></div>
+          <button class="primary-button" id="getFare" type="button"><span>Review journey & fare</span><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey-result" id="journeyResult" aria-live="polite" hidden>
+      <div class="result-copy"><span class="eyebrow">Your route</span><h2>Everything in one journey</h2><p>This fare is a concept estimate for demonstrating the redesigned flow.</p></div>
+      <div class="ticket-card">
+        <div class="ticket-top"><span>Journey summary</span><span id="tripLabel">One way · 1 passenger</span></div>
+        <div class="route-summary" id="routeSummary"></div>
+        <div class="ticket-meta"><div><small>Estimated duration</small><strong id="duration">—</strong></div><div><small>Intermediary stops</small><strong id="stopCount">0</strong></div><div class="fare"><small>Estimated fare</small><strong id="fare">₹—</strong></div></div>
+        <button class="secondary-button" type="button" id="editJourney">Edit journey</button>
+      </div>
+    </section>
+
+    <section class="case-study" id="case-study">
+      <div class="section-heading"><span class="eyebrow">UX rationale</span><h2>Familiar enough to trust.<br>Clear enough to use.</h2></div>
+      <div class="insight-grid">
+        <article><span class="article-number">01</span><h3>Make the route visible</h3><p>A single vertical path shows entry, stops, and exit as one mental model. Users see where a new stop belongs before they commit.</p><div class="mini-visual route-mini"><i></i><i></i><i></i><i></i></div></article>
+        <article><span class="article-number">02</span><h3>Progressive disclosure</h3><p>The original two-station flow stays simple. Waypoint controls appear only after “Add a stop,” keeping the default task lightweight.</p><div class="mini-visual disclosure-mini"><span>+</span><b>Add a stop</b><small>Optional</small></div></article>
+        <article><span class="article-number">03</span><h3>Prevent route errors</h3><p>Duplicate stations are flagged before fare review. Reorder and remove controls sit beside each stop, where their effect is obvious.</p><div class="mini-visual error-mini"><span>!</span><div><b>Station already selected</b><small>Choose another stop</small></div></div></article>
+      </div>
+      <div class="design-system">
+        <div><span class="eyebrow">System extension</span><h3>Built from the product’s existing language</h3><p>The concept preserves KMRL’s teal, airy white surfaces, soft elevation, icon-led labels, and generous rounded geometry—then improves hierarchy, feedback, and responsive behavior.</p></div>
+        <div class="tokens" aria-label="Visual design tokens">
+          <div><span class="swatch teal"></span><small>Metro teal</small><b>#4CAAAB</b></div>
+          <div><span class="swatch ink"></span><small>Deep ink</small><b>#153B3E</b></div>
+          <div><span class="radius-demo"></span><small>Card radius</small><b>24 px</b></div>
+          <div><span class="shadow-demo"></span><small>Soft elevation</small><b>Layer 02</b></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Independent UX concept · Not affiliated with Kochi Metro Rail Ltd.</span><a href="#prototype">Back to prototype ↑</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
